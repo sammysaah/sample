@@ -1,0 +1,54 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', 'Montserrat';
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+
+
+a {
+    text-decoration: none;
+    /* color: white; */
+    background-color: #f1f1f1;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 5px;
+    color: #333;
+    height: 0%;
+}
+
+a::before {
+    content: attr(num);
+    background-color: black;
+    color: white;
+    left:0;
+    padding: 5px;
+    margin-right: 10px;
+    animation: .7s;
+}
+
+a::after {
+    content: attr(data-sam);
+    padding: 5px;
+}
+
+a[data-sam="Samuel Saah"]::before {
+    animation-name: sam;
+}
+
+@keyframes sam {
+    to {
+        transform: rotate(90deg);
+    }
+}
